@@ -1,15 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Registration = () => {
-    
-    const handleSignUp = event => {
-        event.preventDefault();
+  const { createUser } = useContext(AuthContext);
 
-        const form = event.target;
-        const email = form.email.value;
-        const password = form.password.value;
-    }
+  const handleSignUp = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    createUser(email, password)
+    
+      .then((result) => {
+        const createdUser = result.user;
+        console.log(createdUser);
+       
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+      
+  };
 
   return (
     <div>
@@ -26,7 +42,11 @@ const Registration = () => {
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Create and account
               </h1>
-              <form onSubmit={handleSignUp} className="space-y-4 md:space-y-6" action="#">
+              <form
+                onSubmit={handleSignUp}
+                className="space-y-4 md:space-y-6"
+                action="#"
+              >
                 <div>
                   <label
                     for="username"
@@ -84,12 +104,26 @@ const Registration = () => {
                   </label>
                   <input
                     type="url"
-                    name="url"
+                    name="photo"
                     id="confirm-password"
                     placeholder="Photo-url"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required=""
                   />
+                </div>
+                <div className="grid grid-cols-2 gap-5 m-5">
+                <button
+                  type="submit"
+                  className="w-full text-black bg-white-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                >
+                  Google
+                </button>
+                <button
+                  type="submit"
+                  className="w-full text-black bg-white-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                >
+                  Github
+                </button>
                 </div>
 
                 <button
