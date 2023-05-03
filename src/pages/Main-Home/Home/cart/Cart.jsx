@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { FaRegThumbsUp } from "react-icons/fa";
 
 const Cart = () => {
   const [categories, setCategories] = useState([]);
@@ -13,7 +14,7 @@ const Cart = () => {
 
   return (
     <div>
-      <h1>All Category</h1>
+      
       <div  className="grid grid-cols-3 gap-4 m-10">
         {categories.map((category) => (
           <p key={category.id}>
@@ -27,29 +28,28 @@ const Cart = () => {
                   />
                 </a>
                 <div className="px-5 pb-5">
-                  <a href="#">
+                  <a>
                     <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                       {category.chefName}</h5>
                   </a>
                   
-                  <div className="flex items-center justify-between">
-                    <span className="text-3xl font-bold text-gray-900 dark:text-white">
-                      Experience : {category.yearsOfExperience}
+                  <div className="flex items-center justify-between mt-2 mb-2">
+                    <span className=" font-bold text-gray-900 dark:text-white">
+                      Experience : {category.yearsOfExperience} Years
                     </span>
-                    <span>
+                    <span className=" font-bold text-gray-900 dark:text-white">
                       Number of recipes : {category.numOfRecipes}
                     </span>
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <span className="text-3xl font-bold text-gray-900 dark:text-white">
-                      $599
+                    <span className="text-2xl flex font-semibold text-gray-900 dark:text-white">
+                      <FaRegThumbsUp className="mr-2"></FaRegThumbsUp>  {category.likes}
                     </span>
                     <Link
                       to={`/details/${category.id}`}
-                      className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                    >
-                      Add to cart
+                      className="text-blue-700 bg-blue-100 hover:bg-blue-800 hover:text-white  font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 " >
+                      View Recipes
                     </Link>
                   </div>
                 </div>

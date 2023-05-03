@@ -1,11 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Registration = () => {
   const { createUser } = useContext(AuthContext);
+  const [error, setError] = useState("");
 
   const handleSignUp = (event) => {
+    
+   
     event.preventDefault();
 
     const form = event.target;
@@ -13,23 +16,27 @@ const Registration = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-
+    setError("");
+    if(password.length < 6) {
+      setError("password must be 6 characters or longer");
+      return;
+    }  
+   
     createUser(email, password)
-    
       .then((result) => {
         const createdUser = result.user;
         console.log(createdUser);
-       
+        form.reset();
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.massage);
       });
       
   };
 
   return (
-    <div>
-      <section className="bg-gray-50 dark:bg-gray-900">
+    
+      <div className="bg-gray-50 dark:bg-gray-900">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <a
             href="#"
@@ -111,7 +118,6 @@ const Registration = () => {
                     required=""
                   />
                 </div>
-                
 
                 <button
                   type="submit"
@@ -119,22 +125,26 @@ const Registration = () => {
                 >
                   Create an account
                 </button>
-                <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                   Already have an account?{" "}
                   <Link
                     to="/login"
                     className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                   >
-                    Login here
+                    Login here 
                   </Link>
                 </p>
+                <p className=" text-red-800">{error}</p>
               </form>
+             
             </div>
           </div>
         </div>
-      </section>
-    </div>
+        
+      </div>
+   
   );
+  
 };
 
 export default Registration;

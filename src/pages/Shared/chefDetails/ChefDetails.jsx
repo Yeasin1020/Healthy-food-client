@@ -3,7 +3,7 @@ import SelectedDetails from '../selectedDetails/SelectedDetails';
 
 const ChefDetails = () => {
 	return (
-		<div>
+		<div className='flex justify-center '>
 			<SelectedDetails></SelectedDetails>
 		</div>
 	);
