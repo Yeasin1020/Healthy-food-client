@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCy0n606ErQYp2LAHcQWcinjMmiOonqNnI",
-  authDomain: "healthy-food-68b14.firebaseapp.com",
-  projectId: "healthy-food-68b14",
-  storageBucket: "healthy-food-68b14.appspot.com",
-  messagingSenderId: "909448175200",
-  appId: "1:909448175200:web:f27e8fdd976d9cf8426d05"
+  apiKey: "AIzaSyBfsV3cWBfpD1jucJdjP2bzKnG3FaVtmn4",
+  authDomain: "healthy-food-b05ce.firebaseapp.com",
+  projectId: "healthy-food-b05ce",
+  storageBucket: "healthy-food-b05ce.appspot.com",
+  messagingSenderId: "542360446007",
+  appId: "1:542360446007:web:538ebfdb16831b25f98bb2"
 };
 
 // Initialize Firebase

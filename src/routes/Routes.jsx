@@ -7,6 +7,7 @@ import ChefDetails from "../pages/Shared/chefDetails/ChefDetails";
 import PrivateRoute from "./PrivateRoute";
 import SelectedDetails from "../pages/Shared/selectedDetails/SelectedDetails";
 import Error from "../pages/Shared/error/Error";
+import Blog from "../pages/Main-Home/Blog/Blog";
 
 
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
 				path: '/details/:id',
 				element: <PrivateRoute><SelectedDetails></SelectedDetails></PrivateRoute>,
 				loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`)
+			},
+			{
+				path: '/blog',
+				element: <Blog></Blog>
 			}
 		]
 	}
