@@ -1,6 +1,7 @@
 import React from "react";
 import Cart from "./cart/Cart";
 import Team from "./team/Team";
+import Section from "./section/Section";
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
         </div>
         <Cart></Cart>
         <Team></Team>
+        <Section></Section>
       </div>
     </div>
   );

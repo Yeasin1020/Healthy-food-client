@@ -1,4 +1,5 @@
 import React from "react";
+import { FaDove } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -10,7 +11,7 @@ const Footer = () => {
               <a className="flex items-center">
                 
                 <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
-                  Healthy Food
+                  <span className="flex"><FaDove className="mt-1 mr-1 text-yellow-600"></FaDove>Healthy Food</span>
                 </span>
               </a>
             </div>
@@ -36,7 +37,7 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase text-white">
+                <h2 className="mb-6 text-sm font-semibold  uppercase text-white">
                   Follow us
                 </h2>
                 <ul className="text-gray-600 dark:text-gray-400 font-medium">

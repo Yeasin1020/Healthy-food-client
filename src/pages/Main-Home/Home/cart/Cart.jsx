@@ -15,7 +15,7 @@ const Cart = () => {
   return (
     <div>
       
-      <div  className="grid grid-cols-3 gap-4 m-10">
+      <div  className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:m-10">
         {categories.map((category) => (
           <p key={category.id}>
             <div>
@@ -44,7 +44,7 @@ const Cart = () => {
 
                   <div className="flex items-center justify-between">
                     <span className="text-2xl flex font-semibold text-gray-900 dark:text-white">
-                      <FaRegThumbsUp className="mr-2"></FaRegThumbsUp>  {category.likes}
+                      <FaRegThumbsUp className="mr-2 hover:text-green-600"></FaRegThumbsUp>  {category.likes}
                     </span>
                     <Link
                       to={`/details/${category.id}`}

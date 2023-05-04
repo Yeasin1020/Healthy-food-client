@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
-import { Progress } from "flowbite-react";
+import { Progress, Spinner } from "flowbite-react";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
@@ -9,14 +9,11 @@ const PrivateRoute = ({ children }) => {
   console.log(location);
   if (loading) {
     return (
-		<Progress
-		progress={50}
-		labelProgress={true}
-		color="green"
-		textLabel="loading..."
-		labelText={true}
-		size="lg"
-	  />
+		<div className="ml-[50%]">
+      <div className=" text-center mt-10 mb-10 w-12 h-12">
+    <Spinner className="text-green-600" aria-label="Center-aligned spinner example" />
+  </div>
+    </div>
     );
   }
   if (user) {
