@@ -13,8 +13,8 @@ const Team = () => {
     <div>
       <h1 className=" text-center font-bold mt-5 mb-5 text-3xl">Most Famous Chef</h1>
       {categories.map((category) => (
-        <div className=" hover:shadow-2xl mb-5 lg:mb-0 lg:m-36">
-          <div class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-tl-lg md:border-r dark:bg-gray-800 dark:border-gray-700">
+        <div className=" hover:shadow-2xl mb-5 lg:mb-0 lg:m-36 ">
+          <div class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-tl-lg md:border-r dark:bg-gray-800 dark:border-gray-700 ">
             <div class="grid grid-cols-2 lg:grid-cols-3 space-x-3">
               <img
                 class="rounded-full w-24 h-24"

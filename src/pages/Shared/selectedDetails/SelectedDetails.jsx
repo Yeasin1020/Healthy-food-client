@@ -5,6 +5,7 @@ import { IoIosHeartEmpty } from "react-icons/io";
 
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
+import { FaRegThumbsUp } from "react-icons/fa";
 
 const SelectedDetails = () => {
   const [buttonVisible, setButtonVisible] = useState(true);
@@ -37,7 +38,7 @@ const SelectedDetails = () => {
 
   return (
     <div>
-      <div className="flex justify-center ml-72 mr-72 mt-10 hover:shadow-2xl">
+      <div className="flex justify-center lg:ml-72 lg:mr-72 mt-10 hover:shadow-2xl">
         <div className="  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           <a href="#">
             <img
@@ -54,7 +55,7 @@ const SelectedDetails = () => {
                 Description: {chefDetails}
               </span>
             </h5>
-
+              
             <div className="flex items-center justify-between mt-2 mb-2">
               <span className=" font-bold text-gray-900 dark:text-white">
                 Experience : {yearsOfExperience} Years
@@ -63,7 +64,9 @@ const SelectedDetails = () => {
                 Number of recipes : {numOfRecipes}
               </span>
             </div>
-
+            <span className="text-2xl flex font-semibold text-gray-900 dark:text-white">
+                      <FaRegThumbsUp className="mr-2 hover:text-green-600"></FaRegThumbsUp>  {likes}
+                    </span>
             <div className="flex items-center justify-between">
               {recipeName}
               {buttonVisible && (
@@ -87,7 +90,7 @@ const SelectedDetails = () => {
       </div>
 
       {/* card */}
-      <div className="grid grid-cols-3 gap-4 m-10">
+      <div className="grid lg:grid-cols-3 gap-4 m-10">
         <div>
           <div className="w-full hover:shadow-2xl h-[700px] max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">

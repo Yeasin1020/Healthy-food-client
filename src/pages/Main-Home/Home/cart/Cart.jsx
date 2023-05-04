@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaRegThumbsUp } from "react-icons/fa";
+import './Cart.css'
+import LazyLoad from "react-lazy-load";
 
 const Cart = () => {
   const [categories, setCategories] = useState([]);
@@ -15,17 +17,19 @@ const Cart = () => {
   return (
     <div>
       
-      <div  className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:m-10">
+      <div  className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:m-10 ">
         {categories.map((category) => (
           <p key={category.id}>
             <div>
-              <div className="w-full max-w-sm hover:bg-slate-200 hover:shadow-2xl bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+              <div className="w-full max-w-sm hover:bg-slate-200 hover:shadow-2xl bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
                 <a href="#">
+                  <LazyLoad threshold={0.95}>
                   <img
                     className="p-8 h-96 w-96 rounded-t-lg"
                     src={category.chefPicture}
-                    alt="product image"
+                    
                   />
+                  </LazyLoad>
                 </a>
                 <div className="px-5 pb-5">
                   <a>
