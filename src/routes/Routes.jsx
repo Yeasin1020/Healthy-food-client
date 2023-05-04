@@ -12,10 +12,7 @@ import Blog from "../pages/Main-Home/Blog/Blog";
 
 const router = createBrowserRouter([
 
-	{
-		path: "*",
-		element: <Error></Error>
-	},
+	
 	{
 		path: '/',
 		element: <Main></Main>,
@@ -23,6 +20,10 @@ const router = createBrowserRouter([
 			{
 				path: '/',
 				element: <Home></Home>
+			},
+			{
+				path: "*",
+				element: <Error></Error>
 			},
 			{
 				path: '/login',

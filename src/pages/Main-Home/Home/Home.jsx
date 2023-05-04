@@ -2,6 +2,7 @@ import React from "react";
 import Cart from "./cart/Cart";
 import Team from "./team/Team";
 import Section from "./section/Section";
+import Error from "../../Shared/error/Error";
 
 const Home = () => {
   return (
