@@ -32,7 +32,7 @@ const SelectedDetails = () => {
   } = data;
   console.log(likes);
   const handleTost = () => {
-    toast(recipeName, "added favorite");
+    toast(recipeName  +" " + "favorite item added");
   };
 
   return (

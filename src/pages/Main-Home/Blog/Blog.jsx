@@ -1,9 +1,12 @@
 import React from "react";
+import { FaCloudDownloadAlt } from "react-icons/fa";
+const ref = React.createRef();
+import Pdf from "react-to-pdf";
 
 const Blog = () => {
   return (
     <div>
-      <div className="m-10">
+      <div  ref={ref} className="m-10">
         <h2 className=" text-lg font-bold">
           1. Tell us the differences between uncontrolled and controlled
           components.?
@@ -83,6 +86,19 @@ const Blog = () => {
           hook, you can also make your code more readable and easier to
           understand.
         </p>
+      </div>
+      <div className="flex justify-center mb-28 mt-24">
+        <Pdf targetRef={ref} filename="code-example.pdf">
+          {({ toPdf }) => (
+            <button
+              onClick={toPdf}
+              type="button"
+              class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
+            >
+              <span className="flex"><FaCloudDownloadAlt className="mt-[2px] mr-1"></FaCloudDownloadAlt> PDF Download</span>
+            </button>
+          )}
+        </Pdf>
       </div>
     </div>
   );

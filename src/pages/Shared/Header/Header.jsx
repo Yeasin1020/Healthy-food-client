@@ -1,14 +1,15 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
+import { Avatar } from "flowbite-react";
 
 const Header = () => {
-  const {user, logOut} = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
   const handleLogOut = () => {
     logOut()
-    .then()
-    .catch(error => console.log(error))
-  }
+      .then()
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="m-5 ">
       <nav className="border-gray-200 rounded-lg bg-slate-200  dark:bg-gray-800 dark:border-gray-700">
@@ -48,25 +49,30 @@ const Header = () => {
                   Blog
                 </a>
               </li>
-            {
-              user ?   
-              <li>
-              <button
-                onClick={handleLogOut}
-                className="text-blue-700 bg-blue-100 hover:bg-blue-800 hover:text-white  font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 ">
-                LogOut
-              </button>
-            </li> : 
-              <li>
-              <a
-                href="/login"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                LogIn
-              </a>
-            </li>
-            }
-              
+              {user ? (
+                <>
+                  <li>
+                    <Avatar title={user?.displayName} className=" h-12 w-12 rounded-2xl" img={user?.photoURL} rounded={true} />
+                  </li>
+                  <li>
+                    <button
+                      onClick={handleLogOut}
+                      className="text-blue-700 bg-blue-100 hover:bg-blue-800 hover:text-white  font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 "
+                    >
+                      LogOut
+                    </button>
+                  </li>
+                </>
+              ) : (
+                <li>
+                  <a
+                    href="/login"
+                    className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  >
+                    LogIn
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
         </div>
@@ -76,3 +82,6 @@ const Header = () => {
 };
 
 export default Header;
+
+
+// style="background-image:url(http://neptune.pinsupreme.com/wp-content/uploads/2015/09/bg2.jpg); background-repeat: repeat; background-position: top center;background-size: contain;"
