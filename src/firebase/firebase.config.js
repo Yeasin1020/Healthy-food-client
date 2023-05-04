@@ -4,13 +4,15 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
+console.log('environment variable', import.meta.env.VITE_apiKey)
 const firebaseConfig = {
-  apiKey: "AIzaSyBfsV3cWBfpD1jucJdjP2bzKnG3FaVtmn4",
-  authDomain: "healthy-food-b05ce.firebaseapp.com",
-  projectId: "healthy-food-b05ce",
-  storageBucket: "healthy-food-b05ce.appspot.com",
-  messagingSenderId: "542360446007",
-  appId: "1:542360446007:web:538ebfdb16831b25f98bb2"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.VITE_APPID
 };
 
 // Initialize Firebase
