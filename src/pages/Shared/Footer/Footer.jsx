@@ -11,7 +11,7 @@ const Footer = () => {
               <a className="flex items-center">
                 
                 <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
-                  <span className="flex"><FaDove className="mt-1 mr-1 text-yellow-600"></FaDove>Healthy Food</span>
+                  <span className="flex"><FaDove data-aos="fade-right" data-aos-anchor=".other-element" className="mt-1 mr-1 text-yellow-600"></FaDove>Healthy Food</span>
                 </span>
               </a>
             </div>

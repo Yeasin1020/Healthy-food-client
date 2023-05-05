@@ -1,10 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
 import { Avatar } from "flowbite-react";
 import { FaDove } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Header = () => {
+
+  useEffect(() => {
+    AOS.init({
+      offset: 1000,
+      duration: 2500
+      
+    });
+  }, [])
   const { user, logOut } = useContext(AuthContext);
 
   const handleLogOut = () => {
@@ -18,7 +28,7 @@ const Header = () => {
         <div className="lg:max-w-screen-xl lg:flex lg:flex-wrap lg:items-center lg:justify-between  p-4">
           <a href="#" className="flex items-center">
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            <span className="flex "><FaDove className="mt-1 mr-1 text-yellow-600"></FaDove>Healthy Food</span>
+            <span className="flex "><FaDove data-aos="fade-right" data-aos-anchor=".other-element" className="mt-1 mr-1 text-yellow-600"></FaDove>Healthy Food</span>
             </span>
           </a>
           

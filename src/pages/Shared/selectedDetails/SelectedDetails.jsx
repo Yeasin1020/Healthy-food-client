@@ -1,5 +1,5 @@
 import { Card } from "flowbite-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { IoIosHeartEmpty } from "react-icons/io";
 
@@ -8,7 +8,20 @@ import { ToastContainer, toast } from "react-toastify";
 import { FaRegThumbsUp } from "react-icons/fa";
 import LazyLoad from "react-lazy-load";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const SelectedDetails = () => {
+
+  useEffect(() => {
+    AOS.init({
+      offset: 1000,
+      duration: 2500
+      
+    });
+  }, [])
+
+
   const [buttonVisible, setButtonVisible] = useState(true);
   const handleClickHide = () => {
     setButtonVisible(false);
@@ -94,7 +107,7 @@ const SelectedDetails = () => {
 
       {/* card */}
       <div className="grid lg:grid-cols-3 gap-4 m-10">
-        <div>
+        <div data-aos="fade-right" data-aos-anchor=".other-element">
           <div className="w-full hover:shadow-2xl h-[700px] max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
               <LazyLoad>
@@ -166,7 +179,7 @@ const SelectedDetails = () => {
           </div>
         </div>
         {/* 2nd card */}
-        <div>
+        <div data-aos="fade-up" data-aos-anchor=".other-element">
           <div className="w-full hover:shadow-2xl h-[700px] max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
               <LazyLoad>
@@ -238,7 +251,7 @@ const SelectedDetails = () => {
           </div>
         </div>
         {/* 3rd card */}
-        <div>
+        <div data-aos="fade-left" data-aos-anchor=".other-element">
           <div className="w-full hover:shadow-2xl h-[700px] max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
              <LazyLoad>

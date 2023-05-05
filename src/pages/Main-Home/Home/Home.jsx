@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Cart from "./cart/Cart";
 import Team from "./team/Team";
 import Section from "./section/Section";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Home = () => {
+  
+
+
   return (
     <div>
       <div className="m-7">
@@ -13,7 +18,7 @@ const Home = () => {
             backgroundImage: `url("https://i.ibb.co/sCGhLS3/step5-870x1300.jpg")`,
           }}
         >
-          <h2 className="text-5xl text-white font-extrabold text-center p-16 leading-relaxed">
+          <h2 className="text-5xl text-white font-extrabold text-center lg:p-16 leading-relaxed">
             Nourishing Foods to Keep You Feeling Great
           </h2>
           <p className=" text-black text-3xl font-semibold text-center  leading-relaxed p-10 pb-28">

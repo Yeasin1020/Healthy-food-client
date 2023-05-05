@@ -3,8 +3,22 @@ import { Link } from "react-router-dom";
 import { FaRegThumbsUp } from "react-icons/fa";
 import './Cart.css'
 import LazyLoad from "react-lazy-load";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
+
 
 const Cart = () => {
+
+  useEffect(() => {
+    AOS.init({
+      offset: 1000,
+      duration: 2500
+      
+    });
+  }, [])
+  
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -31,11 +45,11 @@ const Cart = () => {
                   />
                   </LazyLoad>
                 </a>
-                <div className="px-5 pb-5">
-                  <a>
+                <div  className="px-5 pb-5">
+                  <p>
                     <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                       {category.chefName}</h5>
-                  </a>
+                  </p>
                   
                   <div className="flex items-center justify-between mt-2 mb-2">
                     <span className=" font-bold text-gray-900 dark:text-white">
@@ -47,11 +61,12 @@ const Cart = () => {
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl flex font-semibold text-gray-900 dark:text-white">
+                    <span data-aos="fade-left" data-aos-anchor=".other-element" className="text-2xl flex font-semibold text-gray-900 dark:text-white">
                       <FaRegThumbsUp className="mr-2 hover:text-green-600"></FaRegThumbsUp>  {category.likes}
                     </span>
                     <Link
                       to={`/details/${category.id}`}
+                      data-aos="fade-right" data-aos-anchor=".other-element"
                       className="text-blue-700 bg-blue-100 hover:bg-blue-800 hover:text-white  font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 " >
                       View Recipes
                     </Link>

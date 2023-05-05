@@ -1,8 +1,18 @@
 import React, { useEffect, useState } from "react";
 import LazyLoad from "react-lazy-load";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Team = () => {
   const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    AOS.init({
+      offset: 1000,
+      duration: 3000
+      
+    });
+  }, [])
 
   useEffect(() => {
     fetch("https://assignment-10-server-yeasin1020.vercel.app/categories")
@@ -14,7 +24,7 @@ const Team = () => {
     <div>
       <h1 className=" text-center font-bold mt-5 mb-5 text-3xl">Most Famous Chef</h1>
       {categories.map((category) => (
-        <div className=" hover:shadow-2xl mb-5 lg:mb-0 lg:m-36 ">
+        <div data-aos="fade-down" data-aos-anchor=".other-element" className=" hover:shadow-2xl mb-5 lg:mb-0 lg:m-36 ">
           <div class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-tl-lg md:border-r dark:bg-gray-800 dark:border-gray-700 ">
             <div class="grid grid-cols-2 lg:grid-cols-3 space-x-3">
               <LazyLoad threshold={0.95}>
@@ -24,7 +34,7 @@ const Team = () => {
                 alt="profile picture"
               />
               </LazyLoad>
-              <div class="space-y-0.5 font-medium dark:text-white text-left">
+              <div  data-aos="fade-up" data-aos-anchor=".other-element" class="space-y-0.5 font-medium dark:text-white text-left">
                 <div>{category.chefName}</div>
                 <div class="text-sm text-gray-500 dark:text-gray-400">
                   {category.work}
@@ -77,7 +87,7 @@ const Team = () => {
               </div>
             </div>
             <div class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
-              <p class="my-4">{category.chefDetails}</p>
+              <p data-aos="fade-right" data-aos-anchor=".other-element"  class="my-4">{category.chefDetails}</p>
             </div>
           </div>
         </div>
