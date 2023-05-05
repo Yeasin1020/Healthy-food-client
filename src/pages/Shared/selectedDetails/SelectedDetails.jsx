@@ -6,6 +6,7 @@ import { IoIosHeartEmpty } from "react-icons/io";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import { FaRegThumbsUp } from "react-icons/fa";
+import LazyLoad from "react-lazy-load";
 
 const SelectedDetails = () => {
   const [buttonVisible, setButtonVisible] = useState(true);
@@ -41,11 +42,13 @@ const SelectedDetails = () => {
       <div className="flex justify-center lg:ml-72 lg:mr-72 mt-10 hover:shadow-2xl">
         <div className="  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           <a href="#">
+            <LazyLoad>
             <img
               className="p-8 h-[700px] w-[800px] rounded-t-lg"
               src={chefPicture}
               alt="product image"
             />
+            </LazyLoad>
           </a>
           <div className="px-5 pb-5">
             <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
@@ -94,11 +97,13 @@ const SelectedDetails = () => {
         <div>
           <div className="w-full hover:shadow-2xl h-[700px] max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
+              <LazyLoad>
               <img
                 className="p-8 h-96 w-96 rounded-t-lg"
                 src={recipeImg1}
                 alt="product image"
               />
+              </LazyLoad>
             </a>
             <div className="px-5 pb-5">
               <a>
@@ -164,11 +169,13 @@ const SelectedDetails = () => {
         <div>
           <div className="w-full hover:shadow-2xl h-[700px] max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
+              <LazyLoad>
               <img
                 className="p-8 h-96 w-96 rounded-t-lg"
                 src={recipeImg2}
                 alt="product image"
               />
+              </LazyLoad>
             </a>
             <div className="px-5 pb-5">
               <a>
@@ -234,11 +241,13 @@ const SelectedDetails = () => {
         <div>
           <div className="w-full hover:shadow-2xl h-[700px] max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
-              <img
+             <LazyLoad>
+             <img
                 className="p-8 h-96 w-96 rounded-t-lg"
                 src={recipeImg3}
                 alt="product image"
               />
+             </LazyLoad>
             </a>
             <div className="px-5 pb-5">
               <a>
