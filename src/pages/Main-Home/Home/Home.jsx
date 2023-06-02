@@ -4,10 +4,11 @@ import Team from "./team/Team";
 import Section from "./section/Section";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import useTitle from "../../../hocks/useTitle";
 
 const Home = () => {
   
-
+  useTitle('Home')
 
   return (
     <div>

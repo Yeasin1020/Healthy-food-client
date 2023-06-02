@@ -2,8 +2,11 @@ import React from "react";
 import { FaCloudDownloadAlt } from "react-icons/fa";
 const ref = React.createRef();
 import Pdf from "react-to-pdf";
+import useTitle from "../../../hocks/useTitle";
+
 
 const Blog = () => {
+  useTitle('Blog')  
   return (
     <div>
       <div  ref={ref} className="m-10">

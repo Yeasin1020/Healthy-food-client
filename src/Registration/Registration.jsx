@@ -1,11 +1,12 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import useTitle from "../hocks/useTitle";
 
 const Registration = () => {
   const { createUser } = useContext(AuthContext);
   const [error, setError] = useState("");
-
+  useTitle('Register')
   const handleSignUp = (event) => {
     
    

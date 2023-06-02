@@ -2,8 +2,14 @@ import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaBeer, FaGithub, FaGoogle } from 'react-icons/fa';
+import useTitle from "../hocks/useTitle";
 
 const Login = () => {
+  
+
+  useTitle ('Login')
+  
+
     const {signIn, googleSignIn, githubSignIn} = useContext(AuthContext);
     const navigate = useNavigate()
     const location = useLocation();
@@ -50,6 +56,7 @@ const Login = () => {
             console.log("error", error.message);
           });
       };
+     
   return (
     <div>
       <section className="bg-gray-50 dark:bg-gray-900 mb-10 mt-10">

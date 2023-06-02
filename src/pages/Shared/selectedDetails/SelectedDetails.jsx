@@ -10,8 +10,11 @@ import LazyLoad from "react-lazy-load";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import useTitle from "../../../hocks/useTitle";
 
 const SelectedDetails = () => {
+
+  useTitle('View Recipes')
 
   useEffect(() => {
     AOS.init({
